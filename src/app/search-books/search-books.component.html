@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title fxLayoutAlign="center">Pesquisar um Livro</mat-card-title>
+  <mat-card-content fyLayout="row" fxLayoutAlign="center center">
+    <mat-form-field>
+      <input matInput (keyup)="search($event.target.value)">
+    </mat-form-field>
+    <!-- <mat-spinner *ngIf="searching" [diameter]="25" [strokeWidth]="3"></mat-spinner> -->
+  </mat-card-content>
+  <mat-card-footer fyLayout="row" fxLayoutAlign="center center">
+    <mat-error>
+      <span *ngIf="error">
+        <p>Erro: {{ error }}</p> 
+      </span>
+    </mat-error>
+  </mat-card-footer>
+</mat-card>
+<app-book-preview-list [books]="books"></app-book-preview-list>
